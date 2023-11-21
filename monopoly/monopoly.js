@@ -6,12 +6,17 @@ var boardSpaces = [
     },
     {
         name: 'Mediterranean Avenue',
-        leftPos: 850,
+        leftPos: 825,
         topPos: 925
     },
     {
         name: 'Community Chest 1',
-        leftPos: 775,
+        leftPos: 740,
+        topPos: 925
+    },
+    {
+        name: 'Baltic Avenue',
+        leftPos: 660,
         topPos: 925
     }
 ]
