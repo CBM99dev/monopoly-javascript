@@ -1,11 +1,26 @@
-#ball
-{
-z-index: 5;
-position: absolute;
-left: 800px;
-top: 800px;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background: black;
+.ball {
+  z-index: 5;
+  position: absolute;
+  left: 800px;
+  top: 800px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: black;
+}
+.game-board-layout {
+  padding: 0 0px;
+  display: flex;
+  align-content: left;
+  justify-content: space-between;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.board-section {
+  width: 880px;
+  height: 700px;  
+}
+.player-statuses {
+  width: 350px;
+  height: 700px;
 }

@@ -2,122 +2,278 @@ var boardSpaces = [
     {
     	propID: 0,
         name: 'GO',
-        leftPos: 845,
-        topPos: 613
+        leftPos: 848,
+        topPos: 615
     },
     {
     	propID: 1,
         name: 'Mediterranean Avenue',
-        leftPos: 738,
-        topPos: 637
+        leftPos: 740,
+        topPos: 640
     },
     {
     	propID: 2,
-        name: 'Community Chest 1',
-        leftPos: 665,
-        topPos: 637
+        name: 'Community Chest',
+        leftPos: 667,
+        topPos: 640
     },
     {
     	propID: 3,
         name: 'Baltic Avenue',
-        leftPos: 592,
-        topPos: 637
+        leftPos: 594,
+        topPos: 640
     },
     {
     	propID: 4,
         name: 'Income Tax',
-        leftPos: 516,
-        topPos: 637
+        leftPos: 518,
+        topPos: 640
     },
     {
     	propID: 5,
         name: 'Reading Railroad',
-        leftPos: 442,
-        topPos: 637
+        leftPos: 445,
+        topPos: 640
     },
     {
     	propID: 6,
         name: 'Oriental Avenue',
-        leftPos: 368,
-        topPos: 637
+        leftPos: 371,
+        topPos: 640
     },
     {
     	propID: 7,
-        name: 'Chance 1',
-        leftPos: 294,
-        topPos: 637
+        name: 'Chance',
+        leftPos: 297,
+        topPos: 640
     },
     {
     	propID: 8,
         name: 'Vermont Avenue',
-        leftPos: 220,
-        topPos: 637
+        leftPos: 223,
+        topPos: 640
     },
     {
     	propID: 9,
         name: 'Connecticut Avenue',
-        leftPos: 146,
-        topPos: 637
+        leftPos: 149,
+        topPos: 640
+    },
+    {
+    	propID: 10,
+        name: 'Jail',
+        leftPos: 80,
+        topPos: 669
+    },
+    {
+    	propID: 11,
+        name: 'St Charles Place',
+        leftPos: 51,
+        topPos: 546
+    },
+    {
+    	propID: 12,
+        name: 'Electric Company',
+        leftPos: 51,
+        topPos: 480
+    },
+    {
+    	propID: 13,
+        name: 'States Avenue',
+        leftPos: 51,
+        topPos: 414
+    },
+    {
+    	propID: 14,
+        name: 'Virginia Avenue',
+        leftPos: 51,
+        topPos: 348
+    },
+    {
+    	propID: 15,
+        name: 'Pennsylvania Railroad',
+        leftPos: 51,
+        topPos: 282
+    },
+    {
+    	propID: 16,
+        name: 'St James Place',
+        leftPos: 218,
+        topPos: 512
+    },
+    {
+    	propID: 17,
+        name: 'Community Chest',
+        leftPos: 218,
+        topPos: 446
+    },
+    {
+    	propID: 18,
+        name: 'Tennessee Avenue',
+        leftPos: 218,
+        topPos: 380
+    },
+    {
+    	propID: 19,
+        name: 'New York Avenue',
+        leftPos: 218,
+        topPos: 314
+    },
+    {
+    	propID: 20,
+        name: 'Free Parking',
+        leftPos: 13,
+        topPos: 196
+    },
+    {
+    	propID: 21,
+        name: 'Kentucky Avenue',
+        leftPos: 121,
+        topPos: 171
+    },
+    {
+    	propID: 22,
+        name: 'Chance',
+        leftPos: 194,
+        topPos: 171
+    },
+    {
+    	propID: 23,
+        name: 'Indiana Avenue',
+        leftPos: 268,
+        topPos: 171
+    },
+    {
+    	propID: 24,
+        name: 'Illinois Avenue',
+        leftPos: 341,
+        topPos: 171
+    },
+    {
+    	propID: 25,
+        name: 'B & D Railroad',
+        leftPos: 415,
+        topPos: 171
+    },
+    {
+    	propID: 26,
+        name: 'Atlantic Avenue',
+        leftPos: 488,
+        topPos: 171
+    },
+    {
+    	propID: 27,
+        name: 'Ventnor Avenue',
+        leftPos: 562,
+        topPos: 171
+    },
+    {
+    	propID: 28,
+        name: 'Water Works',
+        leftPos: 636,
+        topPos: 171
+    },
+    {
+    	propID: 29,
+        name: 'Marvin Gardens',
+        leftPos: 711,
+        topPos: 171
+    },
+    {
+    	propID: 30,
+        name: 'Go To Jail',
+        leftPos: 784,
+        topPos: 171
+    },
+    {
+    	propID: 31,
+        name: 'Pacific Avenue',
+        leftPos: 649,
+        topPos: 315
+    },
+    {
+    	propID: 32,
+        name: 'North Carolina Avenue',
+        leftPos: 649,
+        topPos: 381
+    },
+    {
+    	propID: 33,
+        name: 'Community Chest',
+        leftPos: 649,
+        topPos: 446
+    },
+    {
+    	propID: 34,
+        name: 'Pennsylvania Avenue',
+        leftPos: 649,
+        topPos: 512
     },
     {
     	propID: 35,
         name: 'Short Line Railroad',
-        leftPos: 812,
-        topPos: 283
+        leftPos: 813,
+        topPos: 285
     },
     {
     	propID: 36,
-        name: 'Chance 3',
-        leftPos: 812,
-        topPos: 349
+        name: 'Chance',
+        leftPos: 813,
+        topPos: 351
     },
     {
     	propID: 37,
         name: 'Park Place',
-        leftPos: 812,
-        topPos: 414
+        leftPos: 813,
+        topPos: 416
     },
     {
     	propID: 38,
         name: 'Luxury Tax',
-        leftPos: 812,
-        topPos: 480
+        leftPos: 813,
+        topPos: 482
     },
     {
     	propID: 39,
         name: 'Boardwalk',
-        leftPos: 812,
-        topPos: 546
+        leftPos: 813,
+        topPos: 548
     }
 ]
 
+var playerDefaultValue = {
+    spaceNumber: 0,
+    money: 1500,
+    leftPos: 848,
+    topPos: 615,
+    pieceOverlapPixels: 4
+}
+
 var myPlayer = {
     spaceNumber: 0,
-    money: 1000,
-    leftPos: 845,
-    topPos: 613
+    money: 1500,
+    leftPos: 848,
+    topPos: 615
 }
 
-function logPlayerData(){
-    var dN = document.getElementById("debug notes");
-    dN.innerHTML = '<hr>' +
-                   'Player details: <br>' +
-                   '- Cash = ' + myPlayer.money + 'space # = ' + mPlayer.spaceNumber
-}
+var currentPlayer = 0;
 
+function updatePlayerInfo() {
+    var pSpace = document.getElementById(currentPlayer + "space");
+    pSpace.innerHTML = boardSpaces[myPlayer.spaceNumber].name;
+    var pCash = document.getElementById(currentPlayer + "cash");
+    pCash.innerHTML = myPlayer.money;
+}
 
 function movePiece() {
-    var myPiece = document.getElementById("piece");
+    var myPiece = document.getElementById(currentPlayer + "piece");
     if(boardSpaces[myPlayer.spaceNumber].name == 'Boardwalk') {
         myPlayer.spaceNumber = 0;
         myPlayer.money += 200;
     } else {
         myPlayer.spaceNumber += 1;
     }
-    
-    
-    
     myPiece.style.left = boardSpaces[myPlayer.spaceNumber].leftPos;
     myPiece.style.top = boardSpaces [myPlayer.spaceNumber].topPos;
-    logPlayerData();
+    updatePlayerInfo();
 }
