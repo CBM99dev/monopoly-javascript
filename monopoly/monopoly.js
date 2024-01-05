@@ -265,15 +265,27 @@ function updatePlayerInfo() {
     pCash.innerHTML = myPlayer.money;
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 function movePiece() {
     var myPiece = document.getElementById(currentPlayer + "piece");
-    if(boardSpaces[myPlayer.spaceNumber].name == 'Boardwalk') {
-        myPlayer.spaceNumber = 0;
-        myPlayer.money += 200;
-    } else {
-        myPlayer.spaceNumber += 1;
+    var die1Value = getRandomInt(6) + 1;
+    document.getElementById("firstDie").src = "./images/die" + die1Value + ".png";
+    var die2Value = getRandomInt(6) + 1;
+    document.getElementById("secondDie").src = "./images/die" + die2Value + ".png";
+    var diceTotal = die1Value + die2Value;
+    for (let i = 0; i < diceTotal; i++) {
+        if(boardSpaces[myPlayer.spaceNumber].name == 'Boardwalk') {
+            myPlayer.spaceNumber = 0;
+            myPlayer.money += 200;
+        } else {
+            myPlayer.spaceNumber += 1;
+        }
+        myPiece.style.left = boardSpaces[myPlayer.spaceNumber].leftPos;
+        myPiece.style.top = boardSpaces [myPlayer.spaceNumber].topPos;
+        updatePlayerInfo();
     }
-    myPiece.style.left = boardSpaces[myPlayer.spaceNumber].leftPos;
-    myPiece.style.top = boardSpaces [myPlayer.spaceNumber].topPos;
-    updatePlayerInfo();
+
 }

@@ -15,7 +15,7 @@ table, th, td  {
 <td>
 <div class="game-board-layout">
   <div class="board-section">
-    <img src="./images/monopolyBoard.png" width="880" height="700"/>
+    <img src="./images/monopolyBoard.png" width="880" height="700">
     <hr>
     <button onclick='movePiece()' width='200' height='30'>MOVE</button>
     <button onclick='update()' width='200' height='30'>Start Game</button>
@@ -25,6 +25,11 @@ table, th, td  {
 <td>
   <div class="player-statuses" style="left: 900px; top: 0px;">
     <table>
+
+      <tr><td> </td>
+        <td><img id="firstDie" src="./images/die1.png" width="50" height="50"><td>
+        <td><img id="secondDie" src="./images/die1.png" width="50" height="50"><td>
+      <tr>
 
       <tr><td>Player</td><tr>
       <tr><td> </td>
@@ -44,6 +49,15 @@ table, th, td  {
       <tr><td> </td>
         <td>Name<td>
         <td>their name</td>
+      <tr>
+
+      <tr><td> </td>
+        <td>Space<td>
+        <td><div id="1space"/></td>
+      <tr>
+      <tr><td> </td>
+        <td>Cash<td>
+        <td><div id="1cash"/></td>
       <tr>
 
       <tr><td>Player 3</td><tr>
