@@ -249,20 +249,19 @@ var playerDefaultValue = {
     pieceOverlapPixels: 4
 }
 
-var myPlayer = {
-    spaceNumber: 0,
-    money: 1500,
-    leftPos: 848,
-    topPos: 615
-}
+var allPlayers = [
+
+]
+
+
 
 var currentPlayer = 0;
 
 function updatePlayerInfo() {
     var pSpace = document.getElementById(currentPlayer + "space");
-    pSpace.innerHTML = boardSpaces[myPlayer.spaceNumber].name;
+    pSpace.innerHTML = boardSpaces[allPlayers[currentPlayer].spaceNumber].name;
     var pCash = document.getElementById(currentPlayer + "cash");
-    pCash.innerHTML = myPlayer.money;
+    pCash.innerHTML = allPlayers[currentPlayer].money;
 }
 
 function getRandomInt(max) {
@@ -270,6 +269,8 @@ function getRandomInt(max) {
 }
 
 function movePiece() {
+    var currentPlayerObject = allPlayers[currentPlayer];
+
     var myPiece = document.getElementById(currentPlayer + "piece");
     var die1Value = getRandomInt(6) + 1;
     document.getElementById("firstDie").src = "./images/die" + die1Value + ".png";
@@ -277,15 +278,48 @@ function movePiece() {
     document.getElementById("secondDie").src = "./images/die" + die2Value + ".png";
     var diceTotal = die1Value + die2Value;
     for (let i = 0; i < diceTotal; i++) {
-        if(boardSpaces[myPlayer.spaceNumber].name == 'Boardwalk') {
-            myPlayer.spaceNumber = 0;
-            myPlayer.money += 200;
+        if(boardSpaces[currentPlayerObject.spaceNumber].name == 'Boardwalk') {
+            currentPlayerObject.spaceNumber = 0;
+            currentPlayerObject.money += 200;
         } else {
-            myPlayer.spaceNumber += 1;
+            currentPlayerObject.spaceNumber += 1;
         }
-        myPiece.style.left = boardSpaces[myPlayer.spaceNumber].leftPos;
-        myPiece.style.top = boardSpaces [myPlayer.spaceNumber].topPos;
+        myPiece.style.left = boardSpaces[currentPlayerObject.spaceNumber].leftPos;
+        myPiece.style.top = boardSpaces [currentPlayerObject.spaceNumber].topPos;
         updatePlayerInfo();
     }
+    if (currentPlayer + 1 == allPlayers.length) {
+        currentPlayer = 0;
+    } else {
+        currentPlayer++;
+    }
+    document.getElementById("displayCurrentPlayer").innerHTML = currentPlayerObject.name;
+}
 
+function startGame() {
+    var theBoard = document.getElementById("theBoard");
+    theBoard.src = "./images/monopolyBoard.png";
+    theBoard.height = "700";
+    theBoard.width = "880";
+    document.getElementById("0name").innerHTML = document.getElementById("p1TextBox").value;
+    document.getElementById("1name").innerHTML = document.getElementById("p2TextBox").value;
+
+    allPlayers.push({
+        name: document.getElementById("p1TextBox").value,
+        spaceNumber: 0,
+        money: 1500,
+        leftPos: 848,
+        topPos: 615
+    });
+    allPlayers.push({
+        name: document.getElementById("p2TextBox").value,
+        spaceNumber: 0,
+        money: 1500,
+        leftPos: 848,
+        topPos: 615
+    });
+    document.getElementById("signupForm").innerHTML = "";
+    document.getElementById("displayCurrentPlayer").innerHTML = allPlayers[currentPlayer].name;
+    
+    console.log(allPlayers);
 }

@@ -15,10 +15,19 @@ table, th, td  {
 <td>
 <div class="game-board-layout">
   <div class="board-section">
-    <img src="./images/monopolyBoard.png" width="880" height="700">
+    <img id="theBoard" src="./images/die1.png" width="50" height="50">
     <hr>
-    <button onclick='movePiece()' width='200' height='30'>MOVE</button>
-    <button onclick='update()' width='200' height='30'>Start Game</button>
+    <div id="signupForm">
+      <label for="p1TextBox">Player 1 Name</label>
+      <input type="text" id="p1TextBox"/>
+      <br>
+      <label for="p2TextBox">Player 2 Name</label>
+      <input type="text" id="p2TextBox"/>
+
+    </div>
+    <div id="displayCurrentPlayer"> </div>
+    <button onclick='movePiece()' id="moveButton" width='200' height='30'>Roll Dice</button>
+    <button onclick='startGame()' width='200' height='30'>Start Game</button>
   </div>
 </div>
 </td>
@@ -34,21 +43,21 @@ table, th, td  {
       <tr><td>Player</td><tr>
       <tr><td> </td>
         <td>Name<td>
-        <td>their name</td>
+        <td><div id="0name"></div></td>
       <tr>
       <tr><td> </td>
         <td>Space<td>
-        <td><div id="0space"/></td>
+        <td><div id="0space"></div></td>
       <tr>
       <tr><td> </td>
         <td>Cash<td>
-        <td><div id="0cash"/></td>
+        <td><div id="0cash"></div></td>
       <tr>
 
       <tr><td>Player 2</td><tr>
       <tr><td> </td>
         <td>Name<td>
-        <td>their name</td>
+        <td><div id="1name"></div></td>
       <tr>
 
       <tr><td> </td>
