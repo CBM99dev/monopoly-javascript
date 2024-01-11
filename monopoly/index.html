@@ -9,25 +9,45 @@ table, th, td  {
 </head>
 <link rel="stylesheet" href="./style.css">
 <script src="./monopoly.js"></script>
-<body>
+<body onload="prepForSetup()">
+
 
 <table><tr>
 <td>
 <div class="game-board-layout">
   <div class="board-section">
-    <img id="theBoard" src="./images/die1.png" width="50" height="50">
+    <img id="theBoard" src="./images/Monopoly-Logo.jpg" width="880" height="180">
     <hr>
     <div id="signupForm">
-      <label for="p1TextBox">Player 1 Name</label>
-      <input type="text" id="p1TextBox"/>
+      <label for="p0TextBox"><font color='red'><strong>Required Player Name</strong></font></label>
+      <input type="text" id="p0TextBox" value="Player 1"/>
       <br>
-      <label for="p2TextBox">Player 2 Name</label>
+      <label for="p1TextBox"><font color='green'><strong>Required Player Name</strong></font></label>
+      <input type="text" id="p1TextBox" value="Player 2"/>
+      <br>
+      <label for="p2TextBox"><font color='blue'><strong>Optional Player Name</strong></font></label>
       <input type="text" id="p2TextBox"/>
+      <br>
+      <label for="p3TextBox"><font color='orange'><strong>Optional Player Name</strong></font></label>
+      <input type="text" id="p3TextBox"/>
+      <br>
+      <label for="p4TextBox"><font color='brown'><strong>Optional Player Name</strong></font></label>
+      <input type="text" id="p4TextBox"/>
+      <br>
+      <label for="p5TextBox"><font color='purple'><strong>Optional Player Name</strong></font></label>
+      <input type="text" id="p5TextBox"/>
+      <br>
+      <label for="p6TextBox"><font color='black'><strong>Optional Player Name</strong></font></label>
+      <input type="text" id="p6TextBox"/>
+      <br>
+      <label for="p7TextBox"><font color='yellow'><strong>Optional Player Name</strong></font></label>
+      <input type="text" id="p7TextBox"/>
+      <br>
+      <button onclick='startGame()' width='200' height='30'>Start Game</button>
 
     </div>
     <div id="displayCurrentPlayer"> </div>
-    <button onclick='movePiece()' id="moveButton" width='200' height='30'>Roll Dice</button>
-    <button onclick='startGame()' width='200' height='30'>Start Game</button>
+    <br><button onclick='movePiece()' id="moveButton" width='200' height='30'>Roll Dice</button>
   </div>
 </div>
 </td>
@@ -38,42 +58,31 @@ table, th, td  {
       <tr><td> </td>
         <td><img id="firstDie" src="./images/die1.png" width="50" height="50"><td>
         <td><img id="secondDie" src="./images/die1.png" width="50" height="50"><td>
-      <tr>
+      </tr>
 
-      <tr><td>Player</td><tr>
+      <tr><td><div id="0nameVal"></div></td><tr>
       <tr><td> </td>
-        <td>Name<td>
-        <td><div id="0name"></div></td>
-      <tr>
+        <td><div id="0spaceVal"></div></td>
+      </tr>
       <tr><td> </td>
-        <td>Space<td>
-        <td><div id="0space"></div></td>
-      <tr>
-      <tr><td> </td>
-        <td>Cash<td>
-        <td><div id="0cash"></div></td>
-      <tr>
+        <td><div id="0cashVal"></div></td>
+      </tr>
 
-      <tr><td>Player 2</td><tr>
+      <tr><td><div id="1nameVal"></div></td><tr>
       <tr><td> </td>
-        <td>Name<td>
-        <td><div id="1name"></div></td>
-      <tr>
+        <td><div id="1spaceVal"></div></td>
+      </tr>
+      <tr><td> </td>
+        <td><div id="1cashVal"></div></td>
+      </tr>
 
+      <tr><td><div id="2nameVal"></div></td><tr>
       <tr><td> </td>
-        <td>Space<td>
-        <td><div id="1space"/></td>
-      <tr>
+        <td><div id="2spaceVal"></div></td>
+      </tr>
       <tr><td> </td>
-        <td>Cash<td>
-        <td><div id="1cash"/></td>
-      <tr>
-
-      <tr><td>Player 3</td><tr>
-      <tr><td> </td>
-        <td>Name<td>
-        <td>their name</td>
-      <tr>
+        <td><div id="2cashVal"></div></td>
+      </tr>
   </div>
 </td>
 </tr></table>

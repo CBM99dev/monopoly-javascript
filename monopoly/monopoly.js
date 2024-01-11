@@ -241,13 +241,8 @@ var boardSpaces = [
     }
 ]
 
-var playerDefaultValue = {
-    spaceNumber: 0,
-    money: 1500,
-    leftPos: 848,
-    topPos: 615,
-    pieceOverlapPixels: 4
-}
+const pieceColors = ["red", "green", "blue", "orange", "brown", "purple", "black", "yellow"];
+const pieceOverlapPixels = 4;
 
 var allPlayers = [
 
@@ -258,9 +253,9 @@ var allPlayers = [
 var currentPlayer = 0;
 
 function updatePlayerInfo() {
-    var pSpace = document.getElementById(currentPlayer + "space");
+    var pSpace = document.getElementById(currentPlayer + "spaceVal");
     pSpace.innerHTML = boardSpaces[allPlayers[currentPlayer].spaceNumber].name;
-    var pCash = document.getElementById(currentPlayer + "cash");
+    var pCash = document.getElementById(currentPlayer + "cashVal");
     pCash.innerHTML = allPlayers[currentPlayer].money;
 }
 
@@ -293,7 +288,11 @@ function movePiece() {
     } else {
         currentPlayer++;
     }
-    document.getElementById("displayCurrentPlayer").innerHTML = currentPlayerObject.name;
+    document.getElementById("displayCurrentPlayer").innerHTML = allPlayers[currentPlayer].name;
+}
+
+function prepForSetup() {
+    document.getElementById("moveButton").disabled = true;
 }
 
 function startGame() {
@@ -301,8 +300,29 @@ function startGame() {
     theBoard.src = "./images/monopolyBoard.png";
     theBoard.height = "700";
     theBoard.width = "880";
-    document.getElementById("0name").innerHTML = document.getElementById("p1TextBox").value;
-    document.getElementById("1name").innerHTML = document.getElementById("p2TextBox").value;
+
+
+    //location to place a starting piece on the board
+    var leftAndTopPos = [ boardSpaces[0].leftPos, boardSpaces[0].topPos ];
+    
+    
+    //TODO - Build a for loop from 0-7 that dynamically checks the p_TextBox for a value
+    //        and if it finds it, it should 
+    //			- add player to allPlayers
+    //			- update the status box with their name (and color code their name)
+    
+    allPlayers.push({
+        name: document.getElementById("p0TextBox").value,
+        spaceNumber: 0,
+        money: 1500,
+        leftPos: 848,
+        topPos: 615
+    });    
+    document.getElementById("0nameVal").innerHTML = 
+    	"<font color='" + pieceColors[0] + "'><strong>" + 
+    	document.getElementById("p0TextBox").value + 
+    	"</strong></font>";
+    
 
     allPlayers.push({
         name: document.getElementById("p1TextBox").value,
@@ -311,15 +331,36 @@ function startGame() {
         leftPos: 848,
         topPos: 615
     });
-    allPlayers.push({
+    document.getElementById("1nameVal").innerHTML = 
+    	"<font color='" + pieceColors[1] + "'><strong>" + 
+    	document.getElementById("p1TextBox").value + 
+    	"</strong></font>";
+
+
+	// yep, this is just the 3rd time through!!  loop it all up
+	//  but need to check to see if blank and do that if/then loop 
+	//   within the bigger loop for all players
+	//    ((later, can complain if not min nbr of players
+	allPlayers.push({
         name: document.getElementById("p2TextBox").value,
         spaceNumber: 0,
         money: 1500,
         leftPos: 848,
         topPos: 615
     });
+    document.getElementById("2nameVal").innerHTML = 
+    	"<font color='" + pieceColors[2] + "'><strong>" + 
+    	document.getElementById("p2TextBox").value + 
+    	"</strong></font>";
+
+
+
+
+
     document.getElementById("signupForm").innerHTML = "";
     document.getElementById("displayCurrentPlayer").innerHTML = allPlayers[currentPlayer].name;
+    
+    document.getElementById("moveButton").disabled = false;
     
     console.log(allPlayers);
 }
